@@ -22,7 +22,7 @@ export const App = (): JSX.Element => (
           name={'PopUp'}
           component={ChangeScreenPopUp}
           options={{
-            presentation: 'card',
+            presentation: 'transparentModal',
           }}
         />
       </Stack.Group>
