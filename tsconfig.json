@@ -1,0 +1,15 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": false,
+    "pretty": true,
+    "paths": {
+      "@src": [
+        "./src/*"
+      ],
+      "@Components/*": [
+        "./src/components/*"
+      ],
+    },
+  },
+}
