@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/native';
 import {Text} from 'react-native';
-import {SCREEN_HEIGHT, SCREEN_WIDTH} from './../../../utils/constants';
+import color from './../../../utils/colors';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParams} from './../../../App';
 
@@ -23,11 +23,11 @@ export const ChangeScreenPopUp = () => {
 
 const BaseContainer = styled.View`
   position: absolute;
-  right: ${SCREEN_WIDTH * 0.05}px;
-  left: ${SCREEN_WIDTH * 0.05}px;
-  top: ${SCREEN_HEIGHT * 0.2}px;
-  bottom: 0;
-  background: blue;
+  right: 20%;
+  left: 2.4%;
+  top: 2%;
+  bottom: 7%;
+  background: ${color.baseBrown};
   border-radius: 15px;
 `;
 
