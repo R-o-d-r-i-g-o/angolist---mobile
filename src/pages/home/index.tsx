@@ -17,8 +17,14 @@ export const Home: React.FC = () => {
           <Text>icon</Text>
         </TouchableOpacity>
       </MenuOption>
+      <LogoImage source={require('./../../assets/angolist_logo.png')} />
       <EmptyView />
       <BaseContainer>
+        {true && (
+          <MainTitle>
+            <MainText>Como usar</MainText>
+          </MainTitle>
+        )}
         <Text>teshthjhs</Text>
         <TouchableOpacity onPress={() => navigation.navigate('PopUp')}>
           <Text>show pop up</Text>
@@ -29,9 +35,18 @@ export const Home: React.FC = () => {
 };
 
 const FullScreen = styled.View`
+  background: ${color.baseWhite};
   width: 100%;
   height: 100%;
   position: relative;
+`;
+
+const LogoImage = styled.Image`
+  height: 70px;
+  width: 100px;
+  position: absolute;
+  right: 6%;
+  top: 3%;
 `;
 
 const MenuOption = styled.View`
@@ -43,7 +58,7 @@ const MenuOption = styled.View`
   background: ${color.baseBrown};
   border-radius: 10px;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 20px;
   z-index: -1;
 `;
 
@@ -57,6 +72,23 @@ const BaseContainer = styled.View`
   margin: 100px 25px 0px;
   background: ${color.baseOrange};
   height: 80%;
-  padding: 50px 20px;
-  border-radius: 10px;
+  padding: 30px 0px 50px 20px;
+  border-radius: 20px;
+`;
+
+const MainTitle = styled.View`
+  background: ${color.baseWhite};
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  margin-left: 20%;
+  padding: 8px;
+`;
+
+const MainText = styled.Text`
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: ${color.baseBrown};
 `;
