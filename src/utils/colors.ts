@@ -3,6 +3,7 @@ interface iColor {
   baseBrown: string;
   baseOrange: string;
   baseYellow: string;
+  baseGray: string;
 
   // message popUps only
   warning: string;
@@ -15,6 +16,7 @@ const color: iColor = {
   baseBrown: '#9a3609',
   baseOrange: '#fa9c27',
   baseYellow: '#ffff00',
+  baseGray: '#d9d9d9',
 
   // message popUps only
   warning: '#E4D00A',

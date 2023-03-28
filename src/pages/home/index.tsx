@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/native';
-import {Text, TextInput, TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack/lib/typescript/src/types';
 import {RootStackParams} from './../../App';
 import color from './../../utils/colors';
@@ -102,7 +102,7 @@ const MainText = styled.Text`
 `;
 
 const SearchFiled = styled.TextInput`
-  background: ${color.baseWhite};
+  background: ${color.baseGray};
   margin-top: 15px;
   margin-right: 20px;
   border-radius: 10px;
