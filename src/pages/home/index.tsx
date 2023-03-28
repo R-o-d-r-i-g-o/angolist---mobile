@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/native';
-import {Text, TouchableOpacity} from 'react-native';
+import {Text, TextInput, TouchableOpacity} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack/lib/typescript/src/types';
 import {RootStackParams} from './../../App';
 import color from './../../utils/colors';
@@ -14,7 +14,7 @@ export const Home: React.FC = () => {
     <FullScreen>
       <MenuOption>
         <TouchableOpacity onPress={() => navigation.navigate('PopUp')}>
-          <Text>icon</Text>
+          <MenuImage source={require('./../../assets/menu_icon.png')} />
         </TouchableOpacity>
       </MenuOption>
       <LogoImage source={require('./../../assets/angolist_logo.png')} />
@@ -25,6 +25,7 @@ export const Home: React.FC = () => {
             <MainText>Como usar</MainText>
           </MainTitle>
         )}
+        <SearchFiled />
         <Text>teshthjhs</Text>
         <TouchableOpacity onPress={() => navigation.navigate('PopUp')}>
           <Text>show pop up</Text>
@@ -42,17 +43,22 @@ const FullScreen = styled.View`
 `;
 
 const LogoImage = styled.Image`
-  height: 70px;
-  width: 100px;
+  height: 60px;
+  width: 90px;
   position: absolute;
-  right: 6%;
-  top: 3%;
+  right: 10%;
+  top: 1%;
+`;
+
+const MenuImage = styled.Image`
+  height: 30px;
+  width: 30px;
 `;
 
 const MenuOption = styled.View`
-  margin: 16px 10px;
-  width: 35%;
-  height: 30%;
+  margin: 10px 18px;
+  width: 40%;
+  height: 250px;
   display: flex;
   position: absolute;
   background: ${color.baseBrown};
@@ -64,14 +70,16 @@ const MenuOption = styled.View`
 
 const EmptyView = styled(MenuOption)`
   width: 70%;
-  right: 0px;
-  bottom: 0px;
+  height: 30%;
+  right: 2px;
+  bottom: -8px;
 `;
 
 const BaseContainer = styled.View`
-  margin: 100px 25px 0px;
+  margin: 75px auto 0px;
   background: ${color.baseOrange};
-  height: 80%;
+  height: 86%;
+  width: 84%;
   padding: 30px 0px 50px 20px;
   border-radius: 20px;
 `;
@@ -81,14 +89,22 @@ const MainTitle = styled.View`
   align-items: center;
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
-  margin-left: 20%;
+  margin-left: 30%;
   padding: 8px;
 `;
 
 const MainText = styled.Text`
   font-weight: 700;
-  font-size: 25px;
+  font-size: 18px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: ${color.baseBrown};
+`;
+
+const SearchFiled = styled.TextInput`
+  background: ${color.baseWhite};
+  margin-top: 15px;
+  margin-right: 20px;
+  border-radius: 10px;
+  padding: 8px 15px;
 `;

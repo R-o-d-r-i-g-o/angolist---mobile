@@ -24,11 +24,11 @@ export const ChangeScreenPopUp = () => {
 const BaseContainer = styled.View`
   position: absolute;
   right: 20%;
-  left: 2.4%;
-  top: 2%;
+  left: 4.3%;
+  top: 1.5%;
   bottom: 7%;
   background: ${color.baseBrown};
-  border-radius: 15px;
+  border-radius: 20px;
 `;
 
 const Sample = styled.View`
