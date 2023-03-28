@@ -72,7 +72,7 @@ const EmptyView = styled(MenuOption)`
   width: 70%;
   height: 30%;
   right: 2px;
-  bottom: -8px;
+  bottom: -6px;
 `;
 
 const BaseContainer = styled.View`
