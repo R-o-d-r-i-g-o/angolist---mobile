@@ -32,9 +32,9 @@ const BaseContainer = styled.View`
 `;
 
 const Sample = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
+  padding: 20px;
+  /* justify-content: center; */
+  /* align-items: center; */
 `;
 
 const PopUpButton = styled.TouchableOpacity`
