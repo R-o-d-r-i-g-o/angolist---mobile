@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/native';
-import {Text, TouchableOpacity} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack/lib/typescript/src/types';
 import {RootStackParams} from './../../App';
 import color from './../../utils/colors';
@@ -25,11 +25,28 @@ export const Home: React.FC = () => {
             <MainText>Como usar</MainText>
           </MainTitle>
         )}
-        <SearchFiled />
-        <Text>teshthjhs</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('PopUp')}>
-          <Text>show pop up</Text>
-        </TouchableOpacity>
+        {/* <SearchFiled /> */}
+        <Container>
+          <DiscoveryText>
+            Para ter melhor resultado com o uso deste, acesse a aba de
+            "CATEGORIAS & QUESTIONÁRIOS" e respondá-os.
+            {'\n\n'}
+            Mais adiante, acesse pelo menu as suas "PONTUAÇÕES" e verifique onde
+            seu software deve melhorar para maior desempenho e satisfação dos
+            usuários.
+            {'\n\n'}
+            Não somente isso, ainda na mesma aba, serão mostrados os pontos
+            totais arrecadados e sugestões de mudança para um aumento desse
+            número.
+            {'\n\n'}
+            *OBS.: Responda os questionários com seriedade, caso contrário de
+            nada valerão os feedbacks.
+            {'\n\n'}
+          </DiscoveryText>
+          <AvaliationText>
+            GOSTOU DA INICIATIVA?{'\n'}(Ajude-nos com boas avaliações 😜👍)
+          </AvaliationText>
+        </Container>
       </BaseContainer>
     </FullScreen>
   );
@@ -47,7 +64,7 @@ const LogoImage = styled.Image`
   width: 90px;
   position: absolute;
   right: 10%;
-  top: 1%;
+  top: 10px;
 `;
 
 const MenuImage = styled.Image`
@@ -101,10 +118,31 @@ const MainText = styled.Text`
   color: ${color.baseBrown};
 `;
 
-const SearchFiled = styled.TextInput`
-  background: ${color.baseGray};
-  margin-top: 15px;
-  margin-right: 20px;
-  border-radius: 10px;
-  padding: 8px 15px;
+const Container = styled.View`
+  /* width: 80%; */
+  margin: 20px 20px 20px 0px;
+  background: ${color.baseBrown};
+  opacity: 0.38;
+  padding: 10px 20px;
+  border-radius: 20px;
+  height: 450px;
 `;
+
+const DiscoveryText = styled.Text`
+  font-weight: 600;
+  font-size: 14.5px;
+  text-align: justify;
+  color: black;
+`;
+
+const AvaliationText = styled(DiscoveryText)`
+  text-align: center;
+`;
+
+// const SearchFiled = styled.TextInput`
+//   background: ${color.baseGray};
+//   margin-top: 15px;
+//   margin-right: 20px;
+//   border-radius: 10px;
+//   padding: 8px 15px;
+// `;

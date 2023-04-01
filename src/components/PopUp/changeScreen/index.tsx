@@ -40,5 +40,5 @@ const Sample = styled.View`
 const PopUpButton = styled.TouchableOpacity`
   background: yellow;
   padding: 10px 20px;
-  border-radius: 10;
+  border-radius: 10px;
 `;
