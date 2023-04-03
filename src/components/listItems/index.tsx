@@ -1,5 +1,6 @@
 import React from 'react';
 import {ListItemsProps} from './types';
+import color from './../../utils/colors';
 import {
   ContainerItem,
   BallIcon,
@@ -15,7 +16,10 @@ export const ListItems = (props: ListItemsProps) => {
   return (
     <ContainerItem>
       <BallIcon>
-        <MenuImage source={require('./../../assets/menu_icon.png')} />
+        <MenuImage
+          tintColor={color.baseWhite}
+          source={require('./../../assets/menu_icon.png')}
+        />
       </BallIcon>
       <ItemTitle>
         <ItemText>{fieldName}</ItemText>
