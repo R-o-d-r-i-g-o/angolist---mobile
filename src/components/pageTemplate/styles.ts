@@ -42,6 +42,20 @@ const MenuListItems = styled.View`
   gap: 15px;
 `;
 
+const MenuItem = styled.View`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const MenuText = styled.Text`
+  color: ${color.baseWhite};
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-left: 5px;
+`;
+
 const EmptyView = styled(MenuOption)`
   width: 70%;
   height: 30%;
@@ -82,6 +96,8 @@ export {
   MenuListIcons,
   MenuOption,
   MenuListItems,
+  MenuItem,
+  MenuText,
   EmptyView,
   BaseContainer,
   MainTitle,
