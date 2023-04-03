@@ -2,7 +2,7 @@ import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack/lib/typescript/src/types';
-import {RootStackParams} from './../../App';
+import {RootStackParams} from './../../routes';
 import {PageTemplateProps} from './types';
 import {
   FullScreen,

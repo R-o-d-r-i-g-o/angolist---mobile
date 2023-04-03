@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import {Text} from 'react-native';
 import color from './../../../utils/colors';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParams} from './../../../App';
+import {RootStackParams} from './../../../routes';
 
 export const ChangeScreenPopUp = () => {
   const navigation =

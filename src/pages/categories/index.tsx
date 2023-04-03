@@ -1,15 +1,19 @@
 import React from 'react';
-import styled from 'styled-components/native';
-import data from './data.json';
 import color from '../../utils/colors';
+import data from './data.json';
 import {PageTemplate} from '../../components/pageTemplate';
 import {ListItems} from '../../components/listItems';
+import {SearchField, ScrollView} from './styles';
 
 export const Categories: React.FC = () => {
   return (
     <PageTemplate mainText={'Categorias'}>
       <>
-        <SearchField type="search" placeholder="Procurar por categoria ..." />
+        <SearchField
+          type="search"
+          placeholder="Procurar por categoria ..."
+          placeholderTextColor={color.baseWhite}
+        />
         <ScrollView>
           {data.categories.map(item => (
             <ListItems
@@ -23,19 +27,3 @@ export const Categories: React.FC = () => {
     </PageTemplate>
   );
 };
-
-const SearchField = styled.TextInput`
-  background: ${color.baseBrown};
-  border-radius: 15px;
-  opacity: 0.4;
-  margin-top: 15px;
-  margin-right: 20px;
-  padding: 8px 20px;
-  color: ${color.baseWhite};
-`;
-
-const ScrollView = styled.ScrollView`
-  margin-top: 10px;
-  min-height: 85%;
-  height: 700px;
-`;
