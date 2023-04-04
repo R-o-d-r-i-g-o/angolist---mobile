@@ -1,8 +1,15 @@
+import * as React from 'react';
+import {useNavigation} from '@react-navigation/native';
+import {RootStackParams} from './../../routes';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack/lib/typescript/src/types';
 import styled from 'styled-components/native';
 import color from './../../utils/colors';
 import {Text} from 'react-native';
 
 export const PopupError = () => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParams>>();
+
   return (
     <BaseContainer>
       <Sample>
@@ -15,11 +22,9 @@ export const PopupError = () => {
 };
 
 const BaseContainer = styled.View`
-  position: absolute;
-  right: 20%;
-  left: 4.3%;
-  top: 1.5%;
-  bottom: 7%;
+  margin: auto;
+  height: 35%;
+  width: 80%;
   background: ${color.baseBrown};
   border-radius: 20px;
 `;

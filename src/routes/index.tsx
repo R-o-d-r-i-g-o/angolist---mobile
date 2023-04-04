@@ -1,14 +1,13 @@
 import * as React from 'react';
 import {Info} from './../pages/Info';
 import {Categories} from './../pages/categories';
-import {ChangeScreenPopUp} from './../components/PopUp/changeScreen';
-// import {PopupError} from './../components/popupError';
+import {PopupError} from './../components/popupError';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export type RootStackParams = {
   Info: any;
-  PopUp: any;
+  PopupError: any;
   Categories: any;
 };
 
@@ -23,13 +22,7 @@ export const NavigationOptions = () => {
           <Stack.Screen name={'Categories'} component={Categories} />
 
           {/* change screan menu */}
-          <Stack.Screen
-            name={'PopUp'}
-            component={ChangeScreenPopUp}
-            options={{
-              presentation: 'transparentModal',
-            }}
-          />
+          <Stack.Screen name={'PopupError'} component={PopupError} />
 
           {/* <Stack.Screen name={'PopupError'} component={PopupError} /> */}
           {/* <Stack.Screen
