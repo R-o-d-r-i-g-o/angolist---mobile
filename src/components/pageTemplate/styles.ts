@@ -39,7 +39,7 @@ const MenuOption = styled.View<MenuProps>`
 
 const MenuListItems = styled.View`
   margin-top: 50px;
-  gap: 15px;
+  gap: 20px;
 `;
 
 const MenuItem = styled.View`
@@ -89,6 +89,12 @@ const MainText = styled.Text`
   color: ${color.baseBrown};
 `;
 
+const Seperator = styled.View`
+  background: ${color.baseWhite};
+  height: 2px;
+  margin: 60% 0 10px;
+`;
+
 export {
   FullScreen,
   LogoImage,
@@ -102,4 +108,5 @@ export {
   BaseContainer,
   MainTitle,
   MainText,
+  Seperator,
 };

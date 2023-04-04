@@ -19,6 +19,7 @@ import {
   BaseContainer,
   MainTitle,
   MainText,
+  Seperator,
 } from './styles';
 
 export const PageTemplate = (props: PageTemplateProps) => {
@@ -38,14 +39,19 @@ export const PageTemplate = (props: PageTemplateProps) => {
         </TouchableOpacity>
         {isVisible && (
           <MenuListItems>
-            {menuOptions.map(({name, image}: MenuItemProps) => (
+            {menuOptions.map((item: MenuItemProps) => (
               <TouchableOpacity
+                key={item.name}
                 onPress={() => {
                   navigation.navigate('PopUp');
                 }}>
+                {menuOptions[menuOptions.length - 1] === item && <Seperator />}
                 <MenuItem>
-                  <MenuListIcons tintColor={color.baseWhite} source={image} />
-                  <MenuText>{name}</MenuText>
+                  <MenuListIcons
+                    tintColor={color.baseWhite}
+                    source={item.image}
+                  />
+                  <MenuText>{item.name}</MenuText>
                 </MenuItem>
               </TouchableOpacity>
             ))}
