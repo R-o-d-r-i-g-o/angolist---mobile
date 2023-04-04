@@ -30,12 +30,7 @@ export const PageTemplate = (props: PageTemplateProps) => {
   return (
     <FullScreen>
       <MenuOption showContent={isVisible}>
-        <TouchableOpacity
-          onPress={() => {
-            // navigation.navigate('PopUp');
-            setIsVisible(() => !isVisible);
-            console.log(isVisible);
-          }}>
+        <TouchableOpacity onPress={() => setIsVisible(!isVisible)}>
           <MenuImage
             tintColor={color.baseWhite}
             source={require('./../../assets/menu_icon.png')}
@@ -44,10 +39,15 @@ export const PageTemplate = (props: PageTemplateProps) => {
         {isVisible && (
           <MenuListItems>
             {menuOptions.map(({name, image}: MenuItemProps) => (
-              <MenuItem>
-                <MenuListIcons tintColor={color.baseWhite} source={image} />
-                <MenuText>{name}</MenuText>
-              </MenuItem>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('PopUp');
+                }}>
+                <MenuItem>
+                  <MenuListIcons tintColor={color.baseWhite} source={image} />
+                  <MenuText>{name}</MenuText>
+                </MenuItem>
+              </TouchableOpacity>
             ))}
           </MenuListItems>
         )}
