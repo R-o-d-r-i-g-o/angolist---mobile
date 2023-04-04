@@ -1,9 +1,10 @@
 import React from 'react';
 import color from '../../utils/colors';
-import data from './data.json';
+import {data} from './data';
 import {PageTemplate} from '../../components/pageTemplate';
 import {ListItems} from '../../components/listItems';
 import {SearchField, ScrollView} from './styles';
+import {category} from './types';
 
 export const Categories: React.FC = () => {
   return (
@@ -15,11 +16,11 @@ export const Categories: React.FC = () => {
           placeholderTextColor={color.baseWhite}
         />
         <ScrollView>
-          {data.categories.map(item => (
+          {data.map((item: category) => (
             <ListItems
-              key={item.text}
-              fieldName={'acessibilidade & perfil'}
-              iconLocal={''}
+              key={item.name}
+              fieldName={item.name}
+              iconLocal={item.icon}
             />
           ))}
         </ScrollView>

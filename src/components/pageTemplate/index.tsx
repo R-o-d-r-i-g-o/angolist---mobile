@@ -43,7 +43,8 @@ export const PageTemplate = (props: PageTemplateProps) => {
               <TouchableOpacity
                 key={item.name}
                 onPress={() => {
-                  navigation.navigate('PopUp');
+                  navigation.navigate('Categories');
+                  setIsVisible(false);
                 }}>
                 {menuOptions[menuOptions.length - 1] === item && <Seperator />}
                 <MenuItem>

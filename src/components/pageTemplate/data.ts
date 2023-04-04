@@ -11,7 +11,7 @@ export const menuOptions = [
   },
   {
     name: 'Como usar',
-    path: '',
+    path: 'Info',
     image: require('./../../assets/info_icon.png'),
   },
   {
@@ -21,7 +21,7 @@ export const menuOptions = [
   },
   {
     name: 'Categorias & \nQuestionários',
-    path: '',
+    path: 'Categories',
     image: require('./../../assets/question_icon.png'),
   },
   {
