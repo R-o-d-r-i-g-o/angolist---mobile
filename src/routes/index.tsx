@@ -15,13 +15,13 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 export const NavigationOptions = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={'Categories'}>
+      <Stack.Navigator initialRouteName={'Info'}>
         <Stack.Group screenOptions={{headerShown: false}}>
           {/* normal pages */}
           <Stack.Screen name={'Info'} component={Info} />
           <Stack.Screen name={'Categories'} component={Categories} />
 
-          {/* change screan menu */}
+          {/* aux. element */}
           <Stack.Screen
             name={'PopupInfo'}
             component={PopupError}
@@ -29,15 +29,6 @@ export const NavigationOptions = () => {
               presentation: 'modal',
             }}
           />
-
-          {/* <Stack.Screen name={'PopupError'} component={PopupError} /> */}
-          {/* <Stack.Screen
-            name={'PopUp'}
-            component={ChangeScreenPopUp}
-            options={{
-              presentation: 'transparentModal',
-            }}
-          /> */}
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
