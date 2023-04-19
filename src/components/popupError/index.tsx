@@ -1,42 +1,38 @@
 import * as React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {RootStackParams} from './../../routes';
+import * as S from './styles';
+import {popupItemProps} from './types';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack/lib/typescript/src/types';
-import styled from 'styled-components/native';
-import color from './../../utils/colors';
-import {Text} from 'react-native';
 
-export const PopupError = () => {
+export const PopupError = (props: popupItemProps) => {
+  const {type, message} = props.route.params;
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParams>>();
 
+  const [model] = React.useState({
+    warning: {
+      title: 'Aviso',
+      Image: require('./../../assets/warning.png'),
+    },
+    success: {
+      title: 'Sucesso',
+      Image: require('./../../assets/success.png'),
+    },
+    reproved: {
+      title: 'Reprovado',
+      Image: require('./../../assets/prohibition.png'),
+    },
+  });
+
   return (
-    <BaseContainer>
-      <Sample>
-        <PopUpButton onPress={() => navigation.goBack()}>
-          <Text>back for more</Text>
-        </PopUpButton>
-      </Sample>
-    </BaseContainer>
+    <S.BaseContainer>
+      <S.SignalImage source={model[type].Image} />
+      <S.Title>{model[type].title}</S.Title>
+      <S.Message>{message}</S.Message>
+      <S.PopUpButton onPress={() => navigation.goBack()}>
+        <S.ButtonCTA>Entendi</S.ButtonCTA>
+      </S.PopUpButton>
+    </S.BaseContainer>
   );
 };
-
-const BaseContainer = styled.View`
-  margin: auto;
-  height: 35%;
-  width: 80%;
-  background: ${color.baseBrown};
-  border-radius: 20px;
-`;
-
-const Sample = styled.View`
-  padding: 20px;
-  /* justify-content: center; */
-  /* align-items: center; */
-`;
-
-const PopUpButton = styled.TouchableOpacity`
-  background: yellow;
-  padding: 10px 20px;
-  border-radius: 10px;
-`;

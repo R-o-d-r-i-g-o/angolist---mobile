@@ -7,7 +7,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export type RootStackParams = {
   Info: any;
-  PopupError: any;
+  PopupInfo: any;
   Categories: any;
 };
 
@@ -22,7 +22,13 @@ export const NavigationOptions = () => {
           <Stack.Screen name={'Categories'} component={Categories} />
 
           {/* change screan menu */}
-          <Stack.Screen name={'PopupError'} component={PopupError} />
+          <Stack.Screen
+            name={'PopupInfo'}
+            component={PopupError}
+            options={{
+              presentation: 'modal',
+            }}
+          />
 
           {/* <Stack.Screen name={'PopupError'} component={PopupError} /> */}
           {/* <Stack.Screen

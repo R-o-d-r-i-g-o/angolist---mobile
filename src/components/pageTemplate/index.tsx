@@ -43,7 +43,11 @@ export const PageTemplate = (props: PageTemplateProps) => {
               <TouchableOpacity
                 key={item.name}
                 onPress={() => {
-                  navigation.navigate('Categories');
+                  navigation.navigate('PopupInfo', {
+                    type: 'reproved',
+                    message:
+                      'verifique se as credenciais foram colocadas corretamente',
+                  });
                   setIsVisible(false);
                 }}>
                 {menuOptions[menuOptions.length - 1] === item && <Seperator />}
