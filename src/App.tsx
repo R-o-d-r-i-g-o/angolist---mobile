@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react-native';
 import {NavigationOptions} from './routes';
 
-export const App = (): JSX.Element => <NavigationOptions />;
+export const App = () => <NavigationOptions />;
