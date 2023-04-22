@@ -3,19 +3,25 @@ import color from '../../utils/colors';
 import {data} from './data';
 import {PageTemplate} from '../../components/pageTemplate';
 import {ListItems} from '../../components/listItems';
-import {SearchField, ScrollView} from './styles';
+import * as S from './styles';
 import {category} from './types';
 
 export const Categories: React.FC = () => {
   return (
     <PageTemplate mainText={'Categorias'}>
       <>
-        <SearchField
-          type="search"
-          placeholder="Procurar por categoria ..."
-          placeholderTextColor={color.baseWhite}
-        />
-        <ScrollView>
+        <S.InputSettings>
+          <S.SearchImage
+            tintColor={color.baseWhite}
+            source={require('./../../assets/search.png')}
+          />
+          <S.SearchField
+            type="search"
+            placeholder="Procurar por categoria ..."
+            placeholderTextColor={color.baseWhite}
+          />
+        </S.InputSettings>
+        <S.ScrollView>
           {data.map((item: category) => (
             <ListItems
               key={item.name}
@@ -23,7 +29,7 @@ export const Categories: React.FC = () => {
               iconLocal={item.icon}
             />
           ))}
-        </ScrollView>
+        </S.ScrollView>
       </>
     </PageTemplate>
   );
