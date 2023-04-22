@@ -26,7 +26,7 @@ export const menuOptions = [
   },
   {
     name: 'Sair',
-    path: '',
+    path: 'Login',
     image: require('./../../assets/exit_icon.png'),
   },
 ];

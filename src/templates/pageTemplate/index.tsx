@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {TouchableOpacity} from 'react-native';
 import {PageTemplateProps, MenuItemProps} from './types';
 import {menuOptions} from './data';
-import color from './../../utils/colors';
+import color from '../../utils/colors';
 import * as S from './styles';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';

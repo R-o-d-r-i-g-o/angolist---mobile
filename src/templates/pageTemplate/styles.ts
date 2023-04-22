@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import {MenuProps} from './types';
-import color from './../../utils/colors';
+import color from '../../utils/colors';
 
 const FullScreen = styled.View`
   background: ${color.baseWhite};

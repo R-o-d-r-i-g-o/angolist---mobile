@@ -1,5 +1,5 @@
 import React from 'react';
-import {PageTemplate} from '../../components/pageTemplate';
+import {PageTemplate} from '../../templates/pageTemplate';
 import {Container, DiscoveryText, AvaliationText} from './styles';
 
 export const Info: React.FC = () => {

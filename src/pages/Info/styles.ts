@@ -7,7 +7,7 @@ const Container = styled.View`
   opacity: 0.38;
   padding: 10px 20px;
   border-radius: 20px;
-  height: 450px;
+  height: 94%;
 `;
 
 const DiscoveryText = styled.Text`
