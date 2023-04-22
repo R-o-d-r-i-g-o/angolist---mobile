@@ -2,14 +2,18 @@ import React, {useState} from 'react';
 import {TouchableOpacity} from 'react-native';
 import {PageTemplateProps, MenuItemProps} from './types';
 import {menuOptions} from './data';
-import {useModal} from './../../hooks/useModal';
 import color from './../../utils/colors';
 import * as S from './styles';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParams} from '../../routes';
 
 export const PageTemplate = (props: PageTemplateProps) => {
   const {mainText, children} = props;
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParams>>();
+
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const openModal = useModal();
 
   return (
     <S.FullScreen>
@@ -26,10 +30,7 @@ export const PageTemplate = (props: PageTemplateProps) => {
               <TouchableOpacity
                 key={item.name}
                 onPress={() => {
-                  openModal({
-                    modelType: 'reproved',
-                    warningText: 'hjfjskhdk',
-                  });
+                  navigation.navigate(item.path);
                   setIsVisible(false);
                 }}>
                 {menuOptions[menuOptions.length - 1] === item && (

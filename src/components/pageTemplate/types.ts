@@ -9,6 +9,6 @@ export type MenuProps = {
 
 export type MenuItemProps = {
   name: string;
-  path: string;
+  path: any;
   image: NodeRequire;
 };
