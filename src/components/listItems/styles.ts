@@ -27,7 +27,7 @@ const ItemTitle = styled.View`
 
 const ItemText = styled.Text`
   font-weight: 600;
-  margin-left: 10px
+  margin-left: 10px;
   font-size: 12px;
   letter-spacing: 0.5px;
   color: black;

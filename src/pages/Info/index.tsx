@@ -17,7 +17,7 @@ export const Info: React.FC = () => {
           Não somente isso, ainda na mesma aba, serão mostrados os pontos
           arrecadados e sugestões de mudança para um aumento desse número.
           {'\n\n'}
-          *OBS.: Responda os questionários com seriedade, caso contrário de
+          *OBS.: Responda os questionários com seriedade, caso contrário de nada
           valerão os feedbacks.
           {'\n\n'}
         </DiscoveryText>

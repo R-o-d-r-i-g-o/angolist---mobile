@@ -1,29 +1,27 @@
 import React from 'react';
-import {ListItemsProps} from './types';
 import color from './../../utils/colors';
-import {
-  ContainerItem,
-  BallIcon,
-  ItemTitle,
-  ItemText,
-  MenuImage,
-} from './styles';
+import * as S from './styles';
+
+type ListItemsProps = {
+  fieldName: string;
+  iconLocal: string;
+};
 
 export const ListItems = (props: ListItemsProps) => {
   const {fieldName, iconLocal} = props;
   console.log(iconLocal);
 
   return (
-    <ContainerItem>
-      <BallIcon>
-        <MenuImage
+    <S.ContainerItem>
+      <S.BallIcon>
+        <S.MenuImage
           tintColor={color.baseWhite}
           source={require('./../../assets/menu_icon.png')}
         />
-      </BallIcon>
-      <ItemTitle>
-        <ItemText>{fieldName}</ItemText>
-      </ItemTitle>
-    </ContainerItem>
+      </S.BallIcon>
+      <S.ItemTitle>
+        <S.ItemText>{fieldName}</S.ItemText>
+      </S.ItemTitle>
+    </S.ContainerItem>
   );
 };

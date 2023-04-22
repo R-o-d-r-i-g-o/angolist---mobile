@@ -2,6 +2,8 @@ interface iColor {
   baseWhite: string;
   baseBrown: string;
   baseOrange: string;
+  darkOrange: string;
+  lightOrange: string;
   baseYellow: string;
   baseGray: string;
 
@@ -15,6 +17,8 @@ const color: iColor = {
   baseWhite: '#ffffff',
   baseBrown: '#9a3609',
   baseOrange: '#fa9c27',
+  darkOrange: '#d5751b',
+  lightOrange: '#fbc178',
   baseYellow: '#ffff00',
   baseGray: '#d9d9d9',
 

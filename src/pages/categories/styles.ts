@@ -2,9 +2,8 @@ import styled from 'styled-components/native';
 import color from '../../utils/colors';
 
 const InputSettings = styled.View`
-  background: ${color.baseBrown};
+  background: ${color.darkOrange};
   border-radius: 15px;
-  opacity: 0.4;
   margin-top: 15px;
   margin-right: 20px;
   padding: 0 10px;
