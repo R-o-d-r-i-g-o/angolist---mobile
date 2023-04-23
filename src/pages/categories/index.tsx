@@ -6,7 +6,20 @@ import {ListItems} from '../../components/listItems';
 import * as S from './styles';
 import {category} from './types';
 
-export const Categories: React.FC = () => {
+export const Categories = () => {
+  const [filterCate, setFilterCate] = React.useState<Array<category>>([]);
+  const [categories] = React.useState<Array<category>>(data);
+  const [search, setSearch] = React.useState<string>('');
+
+  React.useEffect(() => {
+    setFilterCate(
+      categories.filter(cat =>
+        cat.name.toLowerCase().includes(search.toLowerCase()),
+      ),
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search]);
+
   return (
     <PageTemplate mainText={'Categorias'}>
       <>
@@ -16,13 +29,13 @@ export const Categories: React.FC = () => {
             source={require('./../../assets/search.png')}
           />
           <S.SearchField
-            type="search"
             placeholder="Procurar por categoria ..."
             placeholderTextColor={color.baseWhite}
+            onChangeText={(value: string) => setSearch(value)}
           />
         </S.InputSettings>
         <S.ScrollView>
-          {data.map((item: category) => (
+          {filterCate.map((item: category) => (
             <ListItems
               key={item.name}
               fieldName={item.name}

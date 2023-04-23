@@ -1,6 +1,6 @@
 export const data = [
   {
-    name: 'Acessibiliadde & Perfil',
+    name: 'Acessibilidade & Perfil',
     icon: '',
   },
   {
