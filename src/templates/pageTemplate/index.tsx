@@ -22,7 +22,7 @@ export const PageTemplate = (props: PageTemplateProps) => {
         <TouchableOpacity onPress={() => setIsVisible(!isVisible)}>
           <S.MenuImage
             tintColor={color.baseWhite}
-            source={require('./../../assets/menu_icon.png')}
+            source={require('./../../assets/menu/menu_icon.png')}
           />
         </TouchableOpacity>
         {isVisible && (
@@ -55,7 +55,7 @@ export const PageTemplate = (props: PageTemplateProps) => {
           </S.MenuListItems>
         )}
       </S.MenuOption>
-      <S.LogoImage source={require('./../../assets/angolist_logo.png')} />
+      <S.LogoImage source={require('./../../assets/brand/angolist_logo.png')} />
       <S.EmptyView />
       <S.BaseContainer>
         {mainText && (

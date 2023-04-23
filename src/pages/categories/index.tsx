@@ -4,7 +4,11 @@ import {data} from './data';
 import {PageTemplate} from '../../templates/pageTemplate';
 import {ListItems} from '../../components/listItems';
 import * as S from './styles';
-import {category} from './types';
+
+type category = {
+  name: string;
+  icon: string;
+};
 
 export const Categories = () => {
   const [filterCate, setFilterCate] = React.useState<Array<category>>([]);

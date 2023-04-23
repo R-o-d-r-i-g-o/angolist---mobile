@@ -19,7 +19,9 @@ export const FirstContactTemplate = (props: PageAuthPageProps) => {
   return (
     <S.FullScreen>
       <S.Content>
-        <S.LogoImage source={require('./../../assets/angolist_logo.png')} />
+        <S.LogoImage
+          source={require('./../../assets/brand/angolist_logo.png')}
+        />
         <S.BaseContainer>
           {(showBackButton || mainText) && (
             <S.HeadLine>
@@ -28,7 +30,7 @@ export const FirstContactTemplate = (props: PageAuthPageProps) => {
                   {showBackButton && (
                     <S.BackStepIcon
                       tintColor={color.baseBrown}
-                      source={require('./../../assets/back_step.png')}
+                      source={require('./../../assets/nav/back_step.png')}
                     />
                   )}
                 </S.BackStep>

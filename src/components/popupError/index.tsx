@@ -13,15 +13,15 @@ export const PopupError = (props: popupItemProps) => {
   const [model] = React.useState({
     warning: {
       title: 'Aviso',
-      Image: require('./../../assets/warning.png'),
+      Image: require('./../../assets/notify/warning.png'),
     },
     success: {
       title: 'Sucesso',
-      Image: require('./../../assets/success.png'),
+      Image: require('./../../assets/notify/success.png'),
     },
     reproved: {
       title: 'Reprovado',
-      Image: require('./../../assets/prohibition.png'),
+      Image: require('./../../assets/notify/prohibition.png'),
     },
   });
 

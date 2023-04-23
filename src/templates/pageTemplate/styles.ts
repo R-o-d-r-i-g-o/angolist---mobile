@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import {MenuProps} from './types';
 import color from '../../utils/colors';
 
 const FullScreen = styled.View`
@@ -24,7 +23,7 @@ const MenuImage = styled.Image`
 
 const MenuListIcons = styled(MenuImage)``;
 
-const MenuOption = styled.View<MenuProps>`
+const MenuOption = styled.View<{showContent: boolean}>`
   margin: 10px 18px;
   display: flex;
   position: absolute;
@@ -32,9 +31,9 @@ const MenuOption = styled.View<MenuProps>`
   border-radius: 10px;
   padding: 20px;
   border-radius: 20px;
-  z-index: ${(props: MenuProps) => (props.showContent ? '1' : '-1')};
-  height: ${(props: MenuProps) => (props.showContent ? '90%' : '250px')};
-  width: ${(props: MenuProps) => (props.showContent ? '75%' : '40%')};
+  z-index: ${props => (props.showContent ? '1' : '-1')};
+  height: ${props => (props.showContent ? '90%' : '250px')};
+  width: ${props => (props.showContent ? '75%' : '40%')};
 `;
 
 const MenuListItems = styled.View`

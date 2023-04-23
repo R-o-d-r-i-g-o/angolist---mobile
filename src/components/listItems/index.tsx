@@ -16,7 +16,7 @@ export const ListItems = (props: ListItemsProps) => {
       <S.BallIcon>
         <S.MenuImage
           tintColor={color.baseWhite}
-          source={require('./../../assets/menu_icon.png')}
+          source={require('./../../assets/menu/menu_icon.png')}
         />
       </S.BallIcon>
       <S.ItemTitle>

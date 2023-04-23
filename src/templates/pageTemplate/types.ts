@@ -3,10 +3,6 @@ export type PageTemplateProps = {
   children: JSX.Element;
 };
 
-export type MenuProps = {
-  showContent: boolean;
-};
-
 export type MenuItemProps = {
   name: string;
   path: any;
