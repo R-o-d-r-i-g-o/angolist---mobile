@@ -1,49 +1,22 @@
-import * as React from 'react-native';
-import {Info} from './../pages/Info';
-import {FirstContact} from '../pages/Login/FirstContact';
-import {SignIn} from '../pages/Login/SignIn';
-import {SignUp} from '../pages/Login/SignUp';
-import {Categories} from './../pages/categories';
-import {PopupError} from './../components/popupError';
+import React from 'react';
+import {useAuth} from '../context/Auth';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-export type RootStackParams = {
-  Info: any;
-  Login: any;
-  SignIn: any;
-  SignUp: any;
-  PopupInfo: any;
-  Categories: any;
-};
+import {AuthStack, useNavigateAuth} from './authStack';
+import {AppStack, useNavigateApp} from './appStack';
 
-const Stack = createNativeStackNavigator<RootStackParams>();
+export const useNavigation = () => ({useNavigateApp, useNavigateAuth});
+
 export const NavigationOptions = () => {
+  const {authData, loading} = useAuth();
+
+  if (loading) {
+    return;
+  }
+
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName={'Login'}
-        screenOptions={{headerShown: false}}>
-        <>
-          <Stack.Group>
-            <Stack.Screen name={'Login'} component={FirstContact} />
-            <Stack.Screen name={'SignIn'} component={SignIn} />
-            <Stack.Screen name={'SignUp'} component={SignUp} />
-
-            <Stack.Screen
-              name={'PopupInfo'}
-              component={PopupError}
-              options={{presentation: 'modal'}}
-            />
-          </Stack.Group>
-
-          {/* need auth */}
-          <Stack.Group>
-            <Stack.Screen name={'Info'} component={Info} />
-            <Stack.Screen name={'Categories'} component={Categories} />
-          </Stack.Group>
-        </>
-      </Stack.Navigator>
+      {authData ? <AppStack /> : <AuthStack />}
     </NavigationContainer>
   );
 };

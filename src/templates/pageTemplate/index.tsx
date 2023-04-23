@@ -1,18 +1,19 @@
 import React, {useState} from 'react';
 import {TouchableOpacity} from 'react-native';
 import {PageTemplateProps, MenuItemProps} from './types';
+import {useNavigation} from '../../routes';
+import {useAuth} from '../../context/Auth';
 import {menuOptions} from './data';
 import color from '../../utils/colors';
 import * as S from './styles';
-import {useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParams} from '../../routes';
 
 export const PageTemplate = (props: PageTemplateProps) => {
   const {mainText, children} = props;
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  const {signOut} = useAuth();
+  const {useNavigateApp, useNavigateAuth} = useNavigation();
 
+  const navigationAuth = useNavigateAuth();
+  const navigationApp = useNavigateApp();
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   return (
@@ -30,7 +31,13 @@ export const PageTemplate = (props: PageTemplateProps) => {
               <TouchableOpacity
                 key={item.name}
                 onPress={() => {
-                  navigation.navigate(item.path);
+                  if (menuOptions[menuOptions.length - 1] === item) {
+                    signOut();
+                    navigationAuth.navigate('Login');
+                    return;
+                  }
+
+                  navigationApp.navigate(item.path);
                   setIsVisible(false);
                 }}>
                 {menuOptions[menuOptions.length - 1] === item && (

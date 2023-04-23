@@ -1,4 +1,6 @@
 import React from 'react';
+
+import {AuthProvider} from './Auth';
 import DismissKeyboard from '../components/DismissKeyboard';
 
 type ContextProviderProps = {
@@ -6,7 +8,11 @@ type ContextProviderProps = {
 };
 
 const ContextProvider = ({children}: ContextProviderProps) => {
-  return <DismissKeyboard>{children}</DismissKeyboard>;
+  return (
+    <DismissKeyboard>
+      <AuthProvider>{children}</AuthProvider>
+    </DismissKeyboard>
+  );
 };
 
 export default ContextProvider;

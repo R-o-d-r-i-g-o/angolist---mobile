@@ -1,27 +1,46 @@
-import React from 'react-native';
+import React, {useState} from 'react';
 import {FirstContactTemplate} from '../../../templates/firstContactTemplate';
+import {useAuth} from '../../../context/Auth';
+import {useNavigateApp} from '../../../routes/appStack';
 import * as S from './styles';
-import {useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParams} from '../../../routes';
+
+type InitialValues = {
+  username: string;
+  password: string;
+};
 
 export const SignIn = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  const [loginForm, setLoginForm] = useState<InitialValues>(
+    {} as InitialValues,
+  );
+  const navigation = useNavigateApp();
+  const {signIn} = useAuth();
 
   return (
     <FirstContactTemplate mainText="Realizar login" showBackButton>
       <S.PageContainer>
         <S.InputContainer>
           <S.Label>Nome</S.Label>
-          <S.InputInfo />
+          <S.InputInfo
+            onChangeText={(value: string) =>
+              setLoginForm({...loginForm, username: value})
+            }
+          />
         </S.InputContainer>
         <S.InputContainer>
           <S.Label>Senha</S.Label>
-          <S.InputInfo />
+          <S.InputInfo
+            secureTextEntry
+            onChangeText={(value: string) =>
+              setLoginForm({...loginForm, password: value})
+            }
+          />
         </S.InputContainer>
         <S.EnterButton
-          onPress={() => navigation.navigate('Info')}
+          onPress={() => {
+            signIn(loginForm.username, loginForm.password);
+            navigation.navigate('Info');
+          }}
           // eslint-disable-next-line react-native/no-inline-styles
           style={{marginTop: 10}}
           customWidth={60}>
