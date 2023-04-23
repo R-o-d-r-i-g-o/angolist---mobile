@@ -16,15 +16,11 @@ interface AuthContextData {
   loading: boolean;
 }
 
-type AuthProviderProps = {
-  children: JSX.Element;
-};
-
 export const AuthContext = createContext<AuthContextData>(
   {} as AuthContextData,
 );
 
-export const AuthProvider = ({children}: AuthProviderProps) => {
+export const AuthProvider = ({children}: {children: JSX.Element}) => {
   const [authData, setAuth] = useState<AuthData>();
   const [loading, setLoading] = useState(true);
 
