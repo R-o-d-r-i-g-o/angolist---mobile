@@ -1,4 +1,9 @@
-import * as React from 'react-native';
+import React from 'react';
 import {NavigationOptions} from './routes';
+import ContextProvider from './context';
 
-export const App = () => <NavigationOptions />;
+export const App = () => (
+  <ContextProvider>
+    <NavigationOptions />
+  </ContextProvider>
+);
