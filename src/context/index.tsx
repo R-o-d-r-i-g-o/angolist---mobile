@@ -3,11 +3,7 @@ import React from 'react';
 import {AuthProvider} from './Auth';
 import DismissKeyboard from '../components/DismissKeyboard';
 
-type ContextProviderProps = {
-  children: JSX.Element;
-};
-
-const ContextProvider = ({children}: ContextProviderProps) => {
+const ContextProvider = ({children}: {children: JSX.Element}) => {
   return (
     <DismissKeyboard>
       <AuthProvider>{children}</AuthProvider>

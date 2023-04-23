@@ -5,9 +5,9 @@ import {
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
 
-import {FirstContact} from '../pages/Login/FirstContact';
-import {SignIn} from '../pages/Login/SignIn';
-import {SignUp} from '../pages/Login/SignUp';
+import {FirstContact} from '../pages/Login/Welcome';
+import {SignIn} from '../pages/Login/Login';
+import {SignUp} from '../pages/Login/Register';
 import {PopupError} from './../components/popupError';
 
 export type RootAuthStackParams = {

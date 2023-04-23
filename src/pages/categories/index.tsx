@@ -1,8 +1,8 @@
 import React from 'react';
 import color from '../../utils/colors';
-import {data} from './data';
 import {PageTemplate} from '../../templates/pageTemplate';
 import {ListItems} from '../../components/listItems';
+import {data} from './data';
 import * as S from './styles';
 
 type category = {

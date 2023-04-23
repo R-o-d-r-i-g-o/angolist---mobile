@@ -5,8 +5,8 @@ import {
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
 
-import {Info} from './../pages/Info';
-import {Categories} from './../pages/categories';
+import {HowToUse} from '../pages/HowToUse';
+import {Categories} from '../pages/Categories';
 
 export type RootAppStackParams = {
   Info: any;
@@ -18,7 +18,7 @@ const Stack = createNativeStackNavigator<RootAppStackParams>();
 export const AppStack = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name={'Info'} component={Info} />
+      <Stack.Screen name={'Info'} component={HowToUse} />
       <Stack.Screen name={'Categories'} component={Categories} />
     </Stack.Navigator>
   );

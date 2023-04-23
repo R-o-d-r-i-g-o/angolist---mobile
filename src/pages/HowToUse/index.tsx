@@ -2,7 +2,7 @@ import React from 'react';
 import {PageTemplate} from '../../templates/pageTemplate';
 import {Container, DiscoveryText, AvaliationText} from './styles';
 
-export const Info: React.FC = () => {
+export const HowToUse = () => {
   return (
     <PageTemplate mainText={'Como usar'}>
       <Container>
