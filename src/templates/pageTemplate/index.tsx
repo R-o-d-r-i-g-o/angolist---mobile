@@ -3,7 +3,7 @@ import {TouchableOpacity} from 'react-native';
 import {PageTemplateProps, MenuItemProps} from './types';
 import {useNavigation} from '../../routes';
 import {useAuth} from '../../context/Auth';
-import {menuOptions} from './data';
+import {menuOptions} from '../../mocks/MenuOptions';
 import color from '../../utils/colors';
 import * as S from './styles';
 

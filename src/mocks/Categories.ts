@@ -1,4 +1,4 @@
-export const data = [
+export const categories = [
   {
     name: 'Acessibilidade & Perfil',
     icon: '',

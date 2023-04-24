@@ -2,7 +2,7 @@ import React from 'react';
 import color from '../../utils/colors';
 import {PageTemplate} from '../../templates/pageTemplate';
 import {ListItems} from '../../components/listItems';
-import {data} from './data';
+import {categories as CATEGORIES} from '../../mocks/Categories';
 import * as S from './styles';
 
 type category = {
@@ -12,7 +12,7 @@ type category = {
 
 export const Categories = () => {
   const [filterCate, setFilterCate] = React.useState<Array<category>>([]);
-  const [categories] = React.useState<Array<category>>(data);
+  const [categories] = React.useState<Array<category>>(CATEGORIES);
   const [search, setSearch] = React.useState<string>('');
 
   React.useEffect(() => {
