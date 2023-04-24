@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
-import {FirstContactTemplate} from '../../../templates/firstContactTemplate';
+import React from 'react';
+import {FirstContactTemplate} from '../../../templates/HomePage';
+import {useNavigation} from '../../../routes';
 import * as S from './styles';
-import {useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParams} from '../../../routes';
 
 type registerNewUser = {
   username: string;
@@ -11,10 +9,11 @@ type registerNewUser = {
   email: string;
 };
 
-export const SignUp = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const [newUser, setNewUser] = useState<registerNewUser>(
+export const Register = () => {
+  const {useNavigateApp} = useNavigation();
+  const navigation = useNavigateApp();
+
+  const [newUser, setNewUser] = React.useState<registerNewUser>(
     {} as registerNewUser,
   );
 
@@ -47,7 +46,7 @@ export const SignUp = () => {
           />
         </S.InputContainer>
         <S.EnterButton
-          onPress={() => navigation.navigate('Info')}
+          onPress={() => navigation.navigate('HowToUse')}
           // eslint-disable-next-line react-native/no-inline-styles
           style={{marginTop: 10}}
           customWidth={60}>

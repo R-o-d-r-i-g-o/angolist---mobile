@@ -9,20 +9,18 @@ import {HowToUse} from '../pages/HowToUse';
 import {Categories} from '../pages/Categories';
 
 export type RootAppStackParams = {
-  Info: any;
+  HowToUse: any;
   Categories: any;
 };
 
 const Stack = createNativeStackNavigator<RootAppStackParams>();
 
-export const AppStack = () => {
-  return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name={'Info'} component={HowToUse} />
-      <Stack.Screen name={'Categories'} component={Categories} />
-    </Stack.Navigator>
-  );
-};
+export const AppStack = () => (
+  <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Screen name="HowToUse" component={HowToUse} />
+    <Stack.Screen name="Categories" component={Categories} />
+  </Stack.Navigator>
+);
 
 export const useNavigateApp = () =>
   useNavigation<NativeStackNavigationProp<RootAppStackParams>>();

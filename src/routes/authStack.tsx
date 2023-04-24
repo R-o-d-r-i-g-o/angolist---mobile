@@ -5,36 +5,34 @@ import {
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
 
-import {FirstContact} from '../pages/HomePage/Welcome';
-import {SignIn} from '../pages/HomePage/Login';
-import {SignUp} from '../pages/HomePage/Register';
+import {Welcome} from '../pages/HomePage/Welcome';
+import {Login} from '../pages/HomePage/Login';
+import {Register} from '../pages/HomePage/Register';
 import {PopupError} from './../components/popupError';
 
 export type RootAuthStackParams = {
   Login: any;
-  SignIn: any;
-  SignUp: any;
+  Welcome: any;
+  Register: any;
   PopupInfo: any;
 };
 
 const Stack = createNativeStackNavigator<RootAuthStackParams>();
 
-export const AuthStack = () => {
-  return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Group initialRouteName={'Login'}>
-        <Stack.Screen name="Login" component={FirstContact} />
-        <Stack.Screen name="SignIn" component={SignIn} />
-        <Stack.Screen name="SignUp" component={SignUp} />
-        <Stack.Screen
-          name="PopupInfo"
-          component={PopupError}
-          options={{presentation: 'modal'}}
-        />
-      </Stack.Group>
-    </Stack.Navigator>
-  );
-};
+export const AuthStack = () => (
+  <Stack.Navigator
+    screenOptions={{headerShown: false}}
+    initialRouteName="Welcome">
+    <Stack.Screen name="Login" component={Login} />
+    <Stack.Screen name="Welcome" component={Welcome} />
+    <Stack.Screen name="Register" component={Register} />
+    <Stack.Screen
+      name="PopupInfo"
+      component={PopupError}
+      options={{presentation: 'modal'}}
+    />
+  </Stack.Navigator>
+);
 
 export const useNavigateAuth = () =>
   useNavigation<NativeStackNavigationProp<RootAuthStackParams>>();

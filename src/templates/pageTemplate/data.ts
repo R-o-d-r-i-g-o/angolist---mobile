@@ -11,7 +11,7 @@ export const menuOptions = [
   },
   {
     name: 'Como usar',
-    path: 'Info',
+    path: 'HowToUse',
     image: require('./../../assets/menu/info_icon.png'),
   },
   {
@@ -26,7 +26,7 @@ export const menuOptions = [
   },
   {
     name: 'Sair',
-    path: 'Login',
+    path: 'Welcome',
     image: require('./../../assets/menu/exit_icon.png'),
   },
 ];

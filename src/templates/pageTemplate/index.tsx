@@ -33,7 +33,7 @@ export const PageTemplate = (props: PageTemplateProps) => {
                 onPress={() => {
                   if (menuOptions[menuOptions.length - 1] === item) {
                     signOut();
-                    navigationAuth.navigate('Login');
+                    navigationAuth.navigate('Welcome');
                     return;
                   }
 

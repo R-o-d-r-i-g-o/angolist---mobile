@@ -1,21 +1,19 @@
-import React from 'react-native';
-import {FirstContactTemplate} from '../../../templates/firstContactTemplate';
+import React from 'react';
+import {FirstContactTemplate} from '../../../templates/HomePage';
+import {useNavigation} from '../../../routes';
 import * as S from './styles';
-import {useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParams} from '../../../routes';
 
-export const FirstContact = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParams>>();
+export const Welcome = () => {
+  const {useNavigateAuth} = useNavigation();
+  const navigation = useNavigateAuth();
 
   return (
     <FirstContactTemplate mainText="Seja bem vindo!" showBackButton={false}>
       <S.Container>
-        <S.EnterButton onPress={() => navigation.navigate('SignIn')}>
+        <S.EnterButton onPress={() => navigation.navigate('Login')}>
           <S.TextButton>Login</S.TextButton>
         </S.EnterButton>
-        <S.EnterButton onPress={() => navigation.navigate('SignUp')}>
+        <S.EnterButton onPress={() => navigation.navigate('Register')}>
           <S.TextButton>Registrar</S.TextButton>
         </S.EnterButton>
       </S.Container>

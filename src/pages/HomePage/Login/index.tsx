@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {FirstContactTemplate} from '../../../templates/firstContactTemplate';
+import {FirstContactTemplate} from '../../../templates/HomePage';
 import {useAuth} from '../../../context/Auth';
 import {useNavigateApp} from '../../../routes/appStack';
 import * as S from './styles';
@@ -9,7 +9,7 @@ type InitialValues = {
   password: string;
 };
 
-export const SignIn = () => {
+export const Login = () => {
   const [loginForm, setLoginForm] = useState<InitialValues>(
     {} as InitialValues,
   );
@@ -39,7 +39,7 @@ export const SignIn = () => {
         <S.EnterButton
           onPress={() => {
             signIn(loginForm.username, loginForm.password);
-            navigation.navigate('Info');
+            navigation.navigate('HowToUse');
           }}
           // eslint-disable-next-line react-native/no-inline-styles
           style={{marginTop: 10}}
