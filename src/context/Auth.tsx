@@ -1,5 +1,6 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {BASE_AUTH} from '../utils/constants';
 import {Alert} from 'react-native';
 import {authService} from '../service/Auth';
 
@@ -29,7 +30,7 @@ export const AuthProvider = ({children}: {children: JSX.Element}) => {
   }, []);
 
   const loadFromStorage = async () => {
-    const auth = await AsyncStorage.getItem('@AuthData');
+    const auth = await AsyncStorage.getItem(BASE_AUTH);
     if (auth) {
       setAuth(JSON.parse(auth) as AuthData);
     }
@@ -40,7 +41,7 @@ export const AuthProvider = ({children}: {children: JSX.Element}) => {
   const signIn = async (email: string, password: string) => {
     try {
       const auth = await authService.signIn(email, password);
-      AsyncStorage.setItem('@AuthData', JSON.stringify(auth));
+      AsyncStorage.setItem(BASE_AUTH, JSON.stringify(auth));
       setAuth(auth);
     } catch (error: any) {
       Alert.alert(error.message, 'tente novamente');
@@ -48,7 +49,7 @@ export const AuthProvider = ({children}: {children: JSX.Element}) => {
   };
 
   const signOut = async (): Promise<void> => {
-    AsyncStorage.removeItem('@AuthData');
+    AsyncStorage.removeItem(BASE_AUTH);
     setAuth(undefined);
     return;
   };
