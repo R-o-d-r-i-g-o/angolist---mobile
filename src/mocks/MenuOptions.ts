@@ -1,12 +1,12 @@
 export const menuOptions = [
   {
     name: 'Perfil',
-    path: '',
+    path: 'Profile',
     image: require('./../assets/menu/person_icon.png'),
   },
   {
     name: 'Configurações',
-    path: '',
+    path: 'Settings',
     image: require('./../assets/menu/gear_icon.png'),
   },
   {
@@ -16,7 +16,7 @@ export const menuOptions = [
   },
   {
     name: 'Pontuação',
-    path: '',
+    path: 'SkillRanks',
     image: require('./../assets/menu/grapth_icon.png'),
   },
   {
