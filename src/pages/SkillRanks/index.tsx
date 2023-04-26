@@ -2,9 +2,12 @@ import React from 'react';
 import color from '../../utils/colors';
 import {PageTemplate} from '../../templates/pageTemplate';
 import {AreaChart, Grid} from 'react-native-svg-charts';
+import {YAxis} from 'react-native-svg-charts';
 
 import {Circle} from 'react-native-svg';
 import {Path} from 'react-native-svg';
+
+import {ChartContainer} from './styles';
 
 interface DecoratorProps {
   x: (arg: number) => number;
@@ -43,22 +46,43 @@ export const Dots = (props: Partial<DecoratorProps>) => {
   );
 };
 
-export const SkillRanks = () => {
-  const data = [null, 30, 10, 30, 20, 30, null]; // salvar com null nas extremidades pra não quebrar o front
+const data = [null, 1, 5, 7, 3, 9, null];
 
+export const SkillRanks = () => {
   return (
     <PageTemplate mainText={'Pontuação'}>
-      <AreaChart
-        style={{height: 200, width: '94%'}}
-        data={data}
-        gridMin={-5}
-        contentInset={{top: 30, bottom: 30}}
-        // svg={{fill: '#ADD8E6'}}
-        gridMax={40}>
-        <Grid />
-        <Line />
-        <Dots />
-      </AreaChart>
+      <ChartContainer>
+        <YAxis
+          data={data}
+          contentInset={{top: 30, bottom: 30}}
+          min={0}
+          max={10}
+          svg={{
+            fill: 'grey',
+            fontSize: 11,
+          }}
+          style={{marginRight: 5}}
+          formatLabel={value =>
+            `${value}`.length === 1 ? `0${value}` : `${value}`
+          }
+        />
+        <LineChartWithAverage />
+      </ChartContainer>
     </PageTemplate>
+  );
+};
+
+const LineChartWithAverage = () => {
+  return (
+    <AreaChart
+      style={{height: 180, width: '87%'}}
+      data={data}
+      gridMin={0}
+      contentInset={{top: 30, bottom: 30}}
+      gridMax={10}>
+      <Grid />
+      <Line />
+      <Dots />
+    </AreaChart>
   );
 };
