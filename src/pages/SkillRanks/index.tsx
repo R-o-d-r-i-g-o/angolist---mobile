@@ -63,7 +63,7 @@ export const SkillRanks = () => {
           }}
           style={{marginRight: 5}}
           formatLabel={value =>
-            `${value}`.length === 1 ? `0${value}` : `${value}`
+            `${value}`.length === 1 ? `  ${value}` : `${value}`
           }
         />
         <LineChartWithAverage />
