@@ -9,11 +9,12 @@ const ChartContainer = styled.View`
 const XLabel = styled.View`
   margin: -25px auto;
   flex-direction: row;
-  gap: 18px;
+  gap: 15px;
 `;
 
 const LabelText = styled.Text`
   font-size: 10px;
+  text-transform: uppercase;
 `;
 
 export {ChartContainer, XLabel, LabelText};

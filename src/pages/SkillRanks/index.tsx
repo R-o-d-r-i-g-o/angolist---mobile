@@ -50,6 +50,8 @@ export const Dots = (props: Partial<DecoratorProps>) => {
 const data = [null, 1, 5, 7, 7, 9, null];
 
 export const SkillRanks = () => {
+  const labels = ['Telas', 'Acess.', 'Dispo.', 'Satur.', 'Perfo.'];
+
   return (
     <PageTemplate mainText={'Pontuação'}>
       <>
@@ -71,11 +73,9 @@ export const SkillRanks = () => {
           <LineChartWithAverage />
         </ChartContainer>
         <XLabel>
-          <LabelText>fjsdkfs</LabelText>
-          <LabelText>fjsdkfs</LabelText>
-          <LabelText>fjsdkfs</LabelText>
-          <LabelText>fjsdkfs</LabelText>
-          <LabelText>fjsdkfs</LabelText>
+          {labels.map(label => (
+            <LabelText key={label}>{label}</LabelText>
+          ))}
         </XLabel>
       </>
     </PageTemplate>
