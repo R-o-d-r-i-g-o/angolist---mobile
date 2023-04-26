@@ -6,8 +6,9 @@ import {YAxis} from 'react-native-svg-charts';
 
 import {Circle} from 'react-native-svg';
 import {Path} from 'react-native-svg';
+import {Text} from 'react-native';
 
-import {ChartContainer} from './styles';
+import {ChartContainer, XLabel, LabelText} from './styles';
 
 interface DecoratorProps {
   x: (arg: number) => number;
@@ -46,28 +47,37 @@ export const Dots = (props: Partial<DecoratorProps>) => {
   );
 };
 
-const data = [null, 1, 5, 7, 3, 9, null];
+const data = [null, 1, 5, 7, 7, 9, null];
 
 export const SkillRanks = () => {
   return (
     <PageTemplate mainText={'Pontuação'}>
-      <ChartContainer>
-        <YAxis
-          data={data}
-          contentInset={{top: 30, bottom: 30}}
-          min={0}
-          max={10}
-          svg={{
-            fill: 'grey',
-            fontSize: 11,
-          }}
-          style={{marginRight: 5}}
-          formatLabel={value =>
-            `${value}`.length === 1 ? `  ${value}` : `${value}`
-          }
-        />
-        <LineChartWithAverage />
-      </ChartContainer>
+      <>
+        <ChartContainer>
+          <YAxis
+            data={data}
+            contentInset={{top: 30, bottom: 30}}
+            min={0}
+            max={10}
+            svg={{
+              fill: 'grey',
+              fontSize: 11,
+            }}
+            style={{marginRight: 5}}
+            formatLabel={value =>
+              `${value}`.length === 1 ? `  ${value}` : `${value}`
+            }
+          />
+          <LineChartWithAverage />
+        </ChartContainer>
+        <XLabel>
+          <LabelText>fjsdkfs</LabelText>
+          <LabelText>fjsdkfs</LabelText>
+          <LabelText>fjsdkfs</LabelText>
+          <LabelText>fjsdkfs</LabelText>
+          <LabelText>fjsdkfs</LabelText>
+        </XLabel>
+      </>
     </PageTemplate>
   );
 };

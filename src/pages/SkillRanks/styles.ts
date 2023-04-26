@@ -1,29 +1,19 @@
 import styled from 'styled-components/native';
 import color from '../../utils/colors';
 
-export const ChartContainer = styled.View`
+const ChartContainer = styled.View`
   flex-direction: row;
   position: relative;
 `;
 
-export const AxisYLine = styled.View`
-  height: 243px;
-  width: 1px;
-  position: absolute;
-  left: 42px;
-  bottom: 32px;
-  background-color: lightgrey;
+const XLabel = styled.View`
+  margin: -25px auto;
+  flex-direction: row;
+  gap: 18px;
 `;
 
-export const Arrow = styled.View`
-  height: 5px;
-  width: 5px;
-  position: absolute;
-  left: 40px;
-  top: 23px;
-  border-left-width: 1px;
-  border-left-color: grey;
-  border-top-width: 1px;
-  border-top-color: grey;
-  transform: rotate(45deg);
+const LabelText = styled.Text`
+  font-size: 10px;
 `;
+
+export {ChartContainer, XLabel, LabelText};
