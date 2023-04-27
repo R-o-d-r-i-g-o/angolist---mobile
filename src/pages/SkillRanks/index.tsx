@@ -4,11 +4,14 @@ import {PageTemplate} from '../../templates/pageTemplate';
 import {AreaChart, Grid} from 'react-native-svg-charts';
 import {YAxis} from 'react-native-svg-charts';
 
+import {StyleSheet} from 'react-native';
+import {SelectCountry} from 'react-native-element-dropdown';
+
 import {Circle} from 'react-native-svg';
 import {Path} from 'react-native-svg';
-import {Text} from 'react-native';
+import {Text, View} from 'react-native';
 
-import {ChartContainer, XLabel, LabelText} from './styles';
+import {ChartContainer, XLabel, LabelText, DropDownBlock} from './styles';
 
 interface DecoratorProps {
   x: (arg: number) => number;
@@ -77,6 +80,9 @@ export const SkillRanks = () => {
             <LabelText key={label}>{label}</LabelText>
           ))}
         </XLabel>
+        <DropDownBlock>
+          <SelectCountryScreen />
+        </DropDownBlock>
       </>
     </PageTemplate>
   );
@@ -96,3 +102,67 @@ const LineChartWithAverage = () => {
     </AreaChart>
   );
 };
+
+const local_data = [
+  {
+    value: '1',
+    lable: 'teste 1',
+  },
+  {
+    value: '2',
+    lable: 'Batman',
+  },
+  {
+    value: '3',
+    lable: 'tese de mestrado',
+  },
+  {
+    value: '4',
+    lable: 'avião',
+  },
+  {
+    value: '5',
+    lable: 'Country 5',
+  },
+];
+
+const SelectCountryScreen = () => {
+  const [country, setCountry] = React.useState('1');
+
+  return (
+    <SelectCountry
+      style={styles.dropdown}
+      selectedTextStyle={styles.selectedTextStyle}
+      maxHeight={200}
+      value={country}
+      data={local_data}
+      valueField="value"
+      labelField="lable"
+      imageField=""
+      placeholder=""
+      onChange={e => {
+        setCountry(e.value);
+      }}
+    />
+  );
+};
+
+export default SelectCountryScreen;
+
+const styles = StyleSheet.create({
+  dropdown: {
+    tintColor: color.baseBrown,
+    height: 35,
+    width: 120,
+    backgroundColor: color.baseOrange,
+    borderColor: color.baseBrown,
+    borderWidth: 3,
+    borderRadius: 20,
+    paddingHorizontal: 8,
+  },
+  selectedTextStyle: {
+    color: color.baseBrown,
+    fontSize: 12,
+    marginLeft: 8,
+  },
+});

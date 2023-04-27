@@ -17,4 +17,10 @@ const LabelText = styled.Text`
   text-transform: uppercase;
 `;
 
-export {ChartContainer, XLabel, LabelText};
+const DropDownBlock = styled.View`
+  margin-top: 40px;
+  margin-right: 20px;
+  align-items: flex-end;
+`;
+
+export {ChartContainer, XLabel, LabelText, DropDownBlock};
