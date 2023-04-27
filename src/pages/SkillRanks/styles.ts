@@ -23,8 +23,9 @@ const DropDownBlock = styled.View`
   align-items: flex-end;
 `;
 
-const MainBlock = styled(DropDownBlock)`
+const MainBlock = styled.View`
   margin-top: 15px;
+  margin-right: 20px;
   background: ${color.darkBrown};
   border-radius: 18px;
   height: 50%;
@@ -32,7 +33,6 @@ const MainBlock = styled(DropDownBlock)`
 
 const MainTitle = styled.View`
   background: ${color.baseOrange};
-  align-items: center;
   align-self: flex-start;
   margin-top: 20px;
   border-bottom-right-radius: 20px;
@@ -48,12 +48,31 @@ const MainText = styled.Text`
   color: ${color.baseBrown};
 `;
 
-const HeadLine = styled.Text`
-  margin-top: 15px;
+const Container = styled.View`
+  padding: 10px 20px;
+`;
+
+const BodyText = styled.Text`
+  font-size: 12px;
+  text-align: justify;
+`;
+
+const HeadLine = styled(BodyText)`
+  margin-top: 10px;
   font-size: 12px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   align-self: center;
+`;
+
+const NavigationView = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const NavImage = styled.Image`
+  height: 20px;
+  width: 20px;
 `;
 
 export {
@@ -65,4 +84,8 @@ export {
   MainTitle,
   MainText,
   HeadLine,
+  Container,
+  BodyText,
+  NavigationView,
+  NavImage,
 };

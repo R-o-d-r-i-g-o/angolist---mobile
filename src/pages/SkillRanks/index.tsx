@@ -9,7 +9,6 @@ import {SelectCountry} from 'react-native-element-dropdown';
 
 import {Circle} from 'react-native-svg';
 import {Path} from 'react-native-svg';
-import {Text, View} from 'react-native';
 
 import {
   ChartContainer,
@@ -20,6 +19,10 @@ import {
   MainTitle,
   MainText,
   HeadLine,
+  Container,
+  BodyText,
+  NavigationView,
+  NavImage,
 } from './styles';
 
 interface DecoratorProps {
@@ -97,8 +100,26 @@ export const SkillRanks = () => {
             <MainText>Feedback</MainText>
           </MainTitle>
           <HeadLine>Fluxo de telas</HeadLine>
-
-
+          <Container>
+            <BodyText>
+              Atenha-se em deixar suas telas com um vínculo mais forte e
+              emotivo.
+              {'\n\n'}
+              Não permita com que suas telas fiquem compartilhando informações
+              desenfreadamente. Faça com que cada uma deixe o usuário ter acesso
+              àquilo que seja referente ao tópico em questão.
+            </BodyText>
+            <NavigationView>
+              <NavImage
+                tintColor={color.baseWhite}
+                source={require('../../assets/nav/previous.png')}
+              />
+              <NavImage
+                tintColor={color.baseWhite}
+                source={require('../../assets/nav/foward.png')}
+              />
+            </NavigationView>
+          </Container>
         </MainBlock>
       </>
     </PageTemplate>
