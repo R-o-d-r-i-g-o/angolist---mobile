@@ -4,14 +4,14 @@ import color from '../../utils/colors';
 const Container = styled.View`
   margin: 20px 20px 20px 0px;
   background: ${color.darkBrown};
-  padding: 10px 20px;
+  padding: 20px;
   border-radius: 20px;
   height: 94%;
 `;
 
 const DiscoveryText = styled.Text`
-  font-weight: 600;
-  font-size: 14.5px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
   text-align: justify;
 `;
 
