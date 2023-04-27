@@ -11,7 +11,16 @@ import {Circle} from 'react-native-svg';
 import {Path} from 'react-native-svg';
 import {Text, View} from 'react-native';
 
-import {ChartContainer, XLabel, LabelText, DropDownBlock} from './styles';
+import {
+  ChartContainer,
+  XLabel,
+  LabelText,
+  DropDownBlock,
+  MainBlock,
+  MainTitle,
+  MainText,
+  HeadLine,
+} from './styles';
 
 interface DecoratorProps {
   x: (arg: number) => number;
@@ -83,6 +92,14 @@ export const SkillRanks = () => {
         <DropDownBlock>
           <SelectCountryScreen />
         </DropDownBlock>
+        <MainBlock>
+          <MainTitle>
+            <MainText>Feedback</MainText>
+          </MainTitle>
+          <HeadLine>Fluxo de telas</HeadLine>
+
+
+        </MainBlock>
       </>
     </PageTemplate>
   );
